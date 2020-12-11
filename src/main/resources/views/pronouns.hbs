@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
+{{#partial "title"}}Pronouns {{this.subjectP}}/{{this.objectP}}{{/partial}}
 
-<h1>tString: <span>{{asdVAl}}</span></h1>
+{{#partial "content" }}
+<div class="container">
+    <div class="row">
+        <h1>Hi! My pronouns are {{path}}</h1>
+    </div>
+    {{#each pronouns}}
+    <div class="row d-block">
+        <h2>Here are some example sentences using my <b>{{this.subjectP}}/{{this.objectP}}</b> pronouns:</h2>
 
-</body>
-</html>
+        <p><b>{{capitalize this.subjectP}}</b> went to the park.</p>
+        <p>I went with <b>{{this.objectP}}</b>.</p>
+        <p><b>{{capitalize this.subjectP}}</b> brought <b>{{this.dependentPossessiveP}}</b> frisbee.</p>
+        <p>At least I think it was <b>{{this.independentPossessiveP}}</b>.</p>
+        <p><b>{{capitalize this.subjectP}}</b> threw the frisbee to <b>{{this.reflexiveP}}</b>.</p>
+    </div>
+    {{/each}}
+</div>
+{{/partial}}
 
+{{> views/layout}}

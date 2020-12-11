@@ -3,17 +3,16 @@ Thumbs.db
 .gradle
 build/
 target/
-out/
 .idea
 *.iml
 *.ipr
-*.iws
 .project
 .settings
 .classpath
 .factorypath
 
-.DS_Store
+bin/
+
 .idea/shelf
 /confluence/target
 /dependencies/repo
@@ -25,7 +24,6 @@ out/
 /ideaSDK
 /clionSDK
 /android-studio/sdk
-out/
 /tmp
 workspace.xml
 *.versionsBackup
@@ -35,10 +33,8 @@ workspace.xml
 /js/js.translator/testData/out-min/
 /js/js.translator/testData/out-pir/
 .gradle/
-build/
 !**/src/**/build
 !**/test/**/build
-*.iml
 !**/testData/**/*.iml
 .idea/libraries/Gradle*.xml
 .idea/libraries/Maven*.xml

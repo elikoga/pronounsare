@@ -32,6 +32,7 @@ dependencies {
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.views:micronaut-views-handlebars")
+    implementation("com.univocity:univocity-parsers:2.9.0")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 }
@@ -59,4 +60,3 @@ tasks {
 
 
 }
-
