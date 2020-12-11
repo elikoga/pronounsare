@@ -57,6 +57,7 @@ tasks {
             jvmTarget = "1.8"
         }
     }
-
-
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
