@@ -1,1 +1,1 @@
-web: gradle run -Dmicronaut.server.port=8000
+web: java -Dmicronaut.server.port=$PORT $ -jar build\libs\pronounsare-0.1-all.jar
