@@ -33,6 +33,6 @@ Configure these repository secrets before the first deployment:
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
-The token needs permission to deploy Workers and manage the `pronounsa.re` zone's custom
-domains. DNSControl deliberately leaves the existing zone records in place during this
-migration; Wrangler creates the Worker custom-domain records.
+The token needs `Account > Workers Scripts > Edit`, `Account > Account Settings > Read`, and
+`Zone > DNS > Edit` for the `pronounsa.re` zone. DNSControl deliberately leaves the existing
+zone records in place during this migration; Wrangler creates the Worker custom-domain records.
