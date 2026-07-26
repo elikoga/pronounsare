@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { shareUrlFor } from '$lib/site';
+	import logo from '$lib/assets/pronounsa-logo.webp';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -43,7 +44,7 @@
 
 <div class="site-shell">
 	<header class="site-header">
-		<a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✦</span>pronounsa.re</a>
+		<a class="brand" href="/"><img class="brand-mark" src={logo} alt="" />pronounsa.re</a>
 		<a href="https://github.com/elikoga/pronounsare">source</a>
 	</header>
 

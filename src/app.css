@@ -63,9 +63,12 @@ a {
 }
 
 .brand-mark {
-	display: inline-block;
-	margin-right: 0.35rem;
-	color: #e85d75;
+	width: 1.55rem;
+	height: 1.55rem;
+	margin-right: 0.4rem;
+	border-radius: 0.35rem;
+	object-fit: cover;
+	vertical-align: middle;
 }
 
 .eyebrow {
