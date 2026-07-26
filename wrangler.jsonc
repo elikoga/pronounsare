@@ -1,0 +1,25 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "pronounsare",
+	"compatibility_date": "2026-07-25",
+	"compatibility_flags": [
+		"nodejs_als"
+	],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"workers_dev": true,
+	"routes": [
+		{
+			"pattern": "pronounsa.re",
+			"custom_domain": true
+		},
+		{
+			"pattern": "my.pronounsa.re",
+			"custom_domain": true
+		}
+	],
+	"preview_urls": true
+}
