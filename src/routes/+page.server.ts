@@ -1,6 +1,10 @@
+import { siteFor } from '$lib/site';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = ({ url }) => ({
-	hostname: url.hostname,
-	isPersonalSubdomain: url.hostname === 'my.pronounsa.re'
-});
+export const load: PageServerLoad = ({ url }) => {
+	const site = siteFor(url.hostname);
+
+	return {
+		site
+	};
+};

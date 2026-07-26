@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { shareUrlFor } from '$lib/site';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -28,12 +29,12 @@
 		}
 
 		error = '';
-		window.location.href = path;
+		window.location.href = shareUrlFor(data.site, path);
 	}
 </script>
 
 <svelte:head>
-	<title>{data.isPersonalSubdomain ? 'My pronouns are…' : 'Pronouns are…'}</title>
+	<title>{data.site.isPersonalSubdomain ? 'My pronouns are…' : 'Pronouns are…'}</title>
 	<meta
 		name="description"
 		content="A small, shareable page for finding and sharing pronouns."
@@ -47,11 +48,12 @@
 	</header>
 
 	<main class="hero">
-		<p class="eyebrow">{data.hostname}</p>
-		<h1>What are your pronouns?</h1>
+		<p class="eyebrow">{data.site.hostname}</p>
+		<h1>{data.site.isPersonalSubdomain ? 'My pronouns are…' : 'What are your pronouns?'}</h1>
 		<p class="lede">
-			Make a tiny page you can share. Add the words you use, and pronounsa.re will turn them into
-			clear example sentences.
+			{data.site.isPersonalSubdomain
+				? 'Make a page for your pronouns. Add the words you use, and share the result.'
+				: 'Make a tiny page you can share. Add the words you use, and pronounsa.re will turn them into clear example sentences.'}
 		</p>
 
 		<form class="pronoun-form" onsubmit={submit}>
@@ -71,11 +73,10 @@
 			<p id="form-hint" class="hint">Use up to five words, separated by spaces or slashes.</p>
 		{/if}
 
-		<p class="muted">Try <a href="/he/they">my.pronounsa.re/he/they</a> or <a href="/she/her/her/hers/herself">a complete set</a>.</p>
+		<p class="muted">Try <a href={shareUrlFor(data.site, 'he/they')}>my.pronounsa.re/he/they</a> or <a href={shareUrlFor(data.site, 'she/her/her/hers/herself')}>a complete set</a>.</p>
 	</main>
 
 	<footer class="site-footer">
-		<span>Made for sharing, not sorting people.</span>
 		<a href="https://github.com/elikoga/pronounsare">Open source on GitHub</a>
 	</footer>
 </div>

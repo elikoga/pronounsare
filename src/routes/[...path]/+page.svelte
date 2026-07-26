@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { shareUrlFor } from '$lib/site';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -9,7 +10,8 @@
 </script>
 
 <svelte:head>
-	<title>My pronouns are {data.path} · pronounsa.re</title>
+	<title>My pronouns are {data.path} · {data.site.hostname}</title>
+	<link rel="canonical" href={shareUrlFor(data.site, data.path)} />
 	<meta
 		name="description"
 		content={`Example sentences using ${data.path} pronouns.`}
@@ -23,7 +25,7 @@
 	</header>
 
 	<main>
-		<p class="eyebrow">{data.hostname}</p>
+		<p class="eyebrow">{data.site.hostname}</p>
 		<h1 class="result-heading">My pronouns are <span class="path">{data.path}</span></h1>
 
 		{#if data.pronouns.length > 0}
@@ -47,7 +49,6 @@
 	</main>
 
 	<footer class="site-footer">
-		<span>Made for sharing, not sorting people.</span>
 		<a href="https://github.com/elikoga/pronounsare">Open source on GitHub</a>
 	</footer>
 </div>
